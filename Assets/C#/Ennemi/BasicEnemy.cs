@@ -7,6 +7,7 @@ public class BasicEnemy : MonoBehaviour
 {
     public int MaxHealth = 10;
     int currentHealth;
+    public Animator animator;
     void Start()
     {
         currentHealth = MaxHealth;
@@ -16,18 +17,19 @@ public class BasicEnemy : MonoBehaviour
     {
         currentHealth -= damage;
 
-        //Anim hit
 
         if (currentHealth <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    void Die()
+    public IEnumerator Die()
     {
-        Debug.Log("sheeee tes mort");
+        //GetComponent<Enemy_behaviour>().moveSpeed = 0; 
+        GetComponent<Enemy_behaviour>().enabled = false;
+        animator.Play("Dead");
+        yield return new WaitForSeconds(2.30f);
         Destroy(gameObject);
-        // mort ennimie + anime
     }
 }

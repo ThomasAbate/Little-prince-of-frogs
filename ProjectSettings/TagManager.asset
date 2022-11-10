@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Enemies
+  - FadeSystem
   layers:
   - Default
   - TransparentFX
