@@ -8,6 +8,7 @@ public class BasicEnemy : MonoBehaviour
     public int MaxHealth = 10;
     int currentHealth;
     public Animator animator;
+    
     void Start()
     {
         currentHealth = MaxHealth;
@@ -28,6 +29,7 @@ public class BasicEnemy : MonoBehaviour
     {
         //GetComponent<Enemy_behaviour>().moveSpeed = 0; 
         GetComponent<Enemy_behaviour>().enabled = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
         animator.Play("Dead");
         yield return new WaitForSeconds(2.30f);
         Destroy(gameObject);

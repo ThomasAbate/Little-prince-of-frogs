@@ -15,6 +15,8 @@ public class Footsteps : MonoBehaviour
     }
 
 
+    //add Footsteps on the wood, gravel and tiling
+
     public void _Footsteps()
     {
         AudioClip clip = GetRandomClip();
