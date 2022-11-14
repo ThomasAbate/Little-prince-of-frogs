@@ -4,8 +4,9 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public int coinsCount;
-    public static Inventory instance;
     public Text CoinsCountText;
+
+    public static Inventory instance;
 
     private void Awake()
     {
@@ -23,5 +24,11 @@ public class Inventory : MonoBehaviour
     {
     coinsCount += count;
     CoinsCountText.text = coinsCount.ToString();
+    }
+
+    public void RemoveCoins(int count)
+    {
+        coinsCount -= count;
+        CoinsCountText.text = coinsCount.ToString();
     }
 }

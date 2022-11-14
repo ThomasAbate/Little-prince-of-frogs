@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9bd2d88ab06480458784f193f23baee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animation: {fileID: 0}
+  Animation: {fileID: 5733392244439841470}
   isAttacking: 0
   AttackPoint: {fileID: 2066112320422429455}
   attackRange: 1

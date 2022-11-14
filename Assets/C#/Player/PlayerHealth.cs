@@ -14,6 +14,20 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public Animator animator;
 
+    public static PlayerHealth instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+
+            Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
+
     void Start()
     {
         currenthHealth = maxHealth;
@@ -24,29 +38,65 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(20);
+            TakeDamage(60);
         }
 
+    }
 
-        if (currenthHealth == 0)
+    public void HealPlayer(int amount)
+    {
+
+        if ((currenthHealth + amount) > maxHealth)
         {
-            animator.Play("Die");
+            currenthHealth = maxHealth;
         }
+        else
+        {
+            currenthHealth += amount;
+        }
+
+        healthBar.SetHealth(currenthHealth);
     }
 
     public void TakeDamage(int damage)
     {
-        if(!isInvicible)
+        if (!isInvicible)
         {
             currenthHealth -= damage;
             healthBar.SetHealth(currenthHealth);
+
+            if (currenthHealth <= 0)
+            {
+                Die();
+                return;
+            }
+
             animator.Play("Hit");
             isInvicible = true;
             StartCoroutine(InvicibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
-            
+
         }
-        
+
+    }
+
+    public void Die()
+    {
+        PlayerController.instance.enabled = false;
+        GetComponent<PlayerAttack>().enabled = false;
+        PlayerController.instance.Animation.SetTrigger("Die");
+        PlayerController.instance.rb.bodyType = RigidbodyType2D.Kinematic;
+        GameOverManager.instance.OnPlayerDeath();
+    }
+
+    public void Respawn()
+    {
+        PlayerController.instance.enabled = true;
+        GetComponent<PlayerAttack>().enabled = true;
+        PlayerController.instance.Animation.SetTrigger("Respawn");
+        PlayerController.instance.rb.bodyType = RigidbodyType2D.Dynamic;
+        currenthHealth = maxHealth;
+        healthBar.SetHealth(currenthHealth);
     }
 
     public IEnumerator InvicibilityFlash()
