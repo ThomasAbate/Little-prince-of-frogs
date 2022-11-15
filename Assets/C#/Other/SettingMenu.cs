@@ -43,6 +43,10 @@ public class SettingMenu : MonoBehaviour
     {
         audioMixer.SetFloat("Music", music);
     }
+    public void SoundEffect(float Soundeffect)
+    {
+        audioMixer.SetFloat("Sound Effect", Soundeffect);
+    }
 
     public void SetFullScreen(bool isFullScreen)
     {
