@@ -71,6 +71,7 @@ public class PlayerHealth : MonoBehaviour
                 return;
             }
 
+
             animator.Play("Hit");
             isInvicible = true;
             StartCoroutine(InvicibilityFlash());
@@ -112,7 +113,7 @@ public class PlayerHealth : MonoBehaviour
 
     public IEnumerator HandleInvincibilityDelay()
     {
-        yield return new WaitForSeconds(invincibilityFlashAfterHit);
+        yield return new WaitForSeconds(invincibilityFlashAfterHit + 0.30f);
         isInvicible = false;
     }
 }

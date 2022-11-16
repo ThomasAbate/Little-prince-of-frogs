@@ -35,7 +35,7 @@ public class Enemy_behaviour : MonoBehaviour
     void Awake()
     {
         SelectTarget();
-        intTimer = timer; //Store the inital value of timer
+        intTimer = timer; 
         anim = GetComponent<Animator>();
     }
 
@@ -57,7 +57,6 @@ public class Enemy_behaviour : MonoBehaviour
             RaycastDebugger();
         }
 
-        //When Player is detected
         if (hit.collider != null)
         {
             EnemyLogic();
@@ -117,8 +116,8 @@ public class Enemy_behaviour : MonoBehaviour
 
     void Attack()
     {
-        timer = intTimer; //Reset Timer when Player enter Attack Range
-        attackMode = true; //To check if Enemy can still attack or not
+        timer = intTimer;
+        attackMode = true; 
 
         anim.SetBool("canWalk", false);
         anim.SetBool("Attack", true);
@@ -178,9 +177,6 @@ public class Enemy_behaviour : MonoBehaviour
             target = rightLimit;
         }
 
-        //Ternary Operator
-        //target = distanceToLeft > distanceToRight ? leftLimit : rightLimit;
-
         Flip();
     }
 
@@ -195,9 +191,6 @@ public class Enemy_behaviour : MonoBehaviour
         {
             rotation.y = 0;
         }
-
-        //Ternary Operator
-        //rotation.y = (currentTarget.position.x < transform.position.x) ? rotation.y = 180f : rotation.y = 0f;
 
         transform.eulerAngles = rotation;
     }
