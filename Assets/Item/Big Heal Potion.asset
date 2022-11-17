@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Big Heal Potion
   m_EditorClassIdentifier: 
   id: 2
+  price: 15
   Name: Big Heal Potion
   description: Give 50 HP
   image: {fileID: 2048316220, guid: aaefe57991d14394385e06d06c1af767, type: 3}

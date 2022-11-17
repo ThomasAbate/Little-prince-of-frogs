@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Heal Potion
   m_EditorClassIdentifier: 
   id: 1
+  price: 5
   Name: Heal Potion
   description: Give 20 HP
   image: {fileID: -671350338, guid: aaefe57991d14394385e06d06c1af767, type: 3}
