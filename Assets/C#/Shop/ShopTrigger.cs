@@ -13,14 +13,15 @@ public class ShopTrigger : MonoBehaviour
     public string ShopName;
     public Item[] itemsToSell;
 
+
     private void Awake()
     {
-        interactUI = GameObject.FindGameObjectWithTag("Interact UI").GetComponent<TMP_Text>();
+        interactUI = GameObject.FindGameObjectWithTag("Interact UI").GetComponent<TMP_Text>();   
     }
 
     void Update()
     {
-        if(isInRange && Input.GetKeyDown(KeyCode.E))
+        if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
             ShopManager.instance.OpenShop(itemsToSell, ShopName);
         }

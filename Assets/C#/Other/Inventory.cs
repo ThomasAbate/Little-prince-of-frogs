@@ -89,6 +89,8 @@ public class Inventory : MonoBehaviour
             itemUI.sprite = EmptyitemUI;
             itemNameUI.text = "";
         }
+
+        CoinsCountText.text = coinsCount.ToString();
     }
 
     public void AddCoins(int count)

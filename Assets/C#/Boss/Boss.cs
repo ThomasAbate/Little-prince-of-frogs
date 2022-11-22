@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
-
     public Transform player;
 
     public bool isFlipped = false;

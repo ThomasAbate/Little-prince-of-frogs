@@ -14,8 +14,9 @@ public class SellButtonItem : MonoBehaviour
 
     public void BuyItem()
     {
-        Inventory inventory = GetComponent<Inventory>();
-        
+        Inventory inventory = Inventory.instance;
+
+
         if (inventory.coinsCount >= item.price)
         {
             inventory.content.Add(item);
