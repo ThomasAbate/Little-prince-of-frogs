@@ -16,7 +16,8 @@ public class ShopTrigger : MonoBehaviour
 
     private void Awake()
     {
-        interactUI = GameObject.FindGameObjectWithTag("Interact UI").GetComponent<TMP_Text>();   
+        interactUI = GameObject.FindGameObjectWithTag("Interact UI").GetComponent<TMP_Text>();
+        interactUI.enabled = false;
     }
 
     void Update()

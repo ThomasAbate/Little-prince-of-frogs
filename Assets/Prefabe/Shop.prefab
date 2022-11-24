@@ -104,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.7777778, y: 1.7777778}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -125,8 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe193c557a0f78142b606c08241ab4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopName: Bob le barman
-  itemsToSell: []
+  ShopName: ???
+  itemsToSell:
+  - {fileID: 11400000, guid: ef36a506f6d53784d94dc01a9b730bad, type: 2}
+  - {fileID: 11400000, guid: e17891f25ec674c4881ebec63dad8af9, type: 2}
 --- !u!95 &8685267620000200411
 Animator:
   serializedVersion: 4

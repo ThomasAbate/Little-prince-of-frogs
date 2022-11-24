@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour
 
     public void LookAtPlayer()
     {
+
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
@@ -18,13 +19,13 @@ public class Boss : MonoBehaviour
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
-            isFlipped = false;
+            isFlipped = true;
         }
         else if (transform.position.x < player.position.x && !isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
-            isFlipped = true;
+            isFlipped = false;
         }
     }
 }

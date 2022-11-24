@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 1840535783742673373}
   - component: {fileID: 9146048622643113601}
   - component: {fileID: 152788847796008473}
-  - component: {fileID: 7459736303316575241}
   - component: {fileID: 656490239911065766}
   - component: {fileID: 3376163796074608870}
   - component: {fileID: 9082793825254302185}
@@ -227,20 +226,6 @@ MonoBehaviour:
     m_Bits: 8
   Damage: 10
   HugeDamage: 20
---- !u!114 &7459736303316575241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5733392244439841471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123786f536108dc46ba32ad876ce091c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinsCount: 0
-  CoinsCountText: {fileID: 0}
 --- !u!114 &656490239911065766
 MonoBehaviour:
   m_ObjectHideFlags: 0
