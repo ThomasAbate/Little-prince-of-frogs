@@ -8,6 +8,7 @@ TagManager:
   - Enemies
   - FadeSystem
   - Interact UI
+  - Sword
   layers:
   - Default
   - TransparentFX
