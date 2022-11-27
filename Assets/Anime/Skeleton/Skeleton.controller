@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skeleton_Attack
+  m_Name: Attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -228,7 +228,7 @@ AnimatorStateMachine:
     m_Position: {x: 400, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5598289824100075691}
-    m_Position: {x: 240, y: 10, z: 0}
+    m_Position: {x: 240, y: -20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -7562971497960309179}

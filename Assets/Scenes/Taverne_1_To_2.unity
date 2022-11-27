@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438d23ab0307e8d4888414d4df607977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Boss room
+  sceneName: Lvl 2
   fadeSystem: {fileID: 0}
 --- !u!61 &1343485131
 BoxCollider2D:
