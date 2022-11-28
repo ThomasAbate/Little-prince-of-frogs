@@ -6,17 +6,20 @@ public class BossHealth : MonoBehaviour
 {
     public int MaxHealth = 10;
     int currentHealth;
+    public BossHealthBar bossHealthbar;
     public Animator animator;
     public BossHealth instance;
 
     private void Awake()
     {
+        
         instance = this;
     }
 
     void Start()
     {
         currentHealth = MaxHealth;
+        bossHealthbar.SetMaxHealth(MaxHealth);
     }
 
     public void TakeDamage(int damage)

@@ -9,6 +9,11 @@ public class Boss : MonoBehaviour
 
     public bool isFlipped = false;
 
+    private void Awake() 
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     public void LookAtPlayer()
     {
 
@@ -19,13 +24,13 @@ public class Boss : MonoBehaviour
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
-            isFlipped = true;
+            isFlipped = false;
         }
         else if (transform.position.x < player.position.x && !isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
-            isFlipped = false;
+            isFlipped = true;
         }
     }
 }
