@@ -8,7 +8,7 @@ public class WeakSportBoss : MonoBehaviour
     {
         if(collision.CompareTag("Sword"))
         {
-            BossHealth.instance.TakeDamage(10);
+            //BossHealth.instance.TakeDamage(10);
         }
     }
 

@@ -4,72 +4,37 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public int maxHealth = 500;
-    public int currenthHealth;
-
-    public SpriteRenderer graphics;
-    public BossHealthBar BosshealthBar;
+    public int MaxHealth = 10;
+    int currentHealth;
     public Animator animator;
-
-    public static BossHealth instance;
+    public BossHealth instance;
 
     private void Awake()
     {
-        if (instance != null)
-        {
-
-            Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scène");
-            return;
-        }
-
         instance = this;
     }
 
     void Start()
     {
-        currenthHealth = maxHealth;
-        BosshealthBar.SetMaxHealth(maxHealth);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            TakeDamage(60);
-        }
-
-    }
-
-    public void HealPlayer(int amount)
-    {
-
-        if ((currenthHealth + amount) > maxHealth)
-        {
-            currenthHealth = maxHealth;
-        }
-        else
-        {
-            currenthHealth += amount;
-        }
-
-        BosshealthBar.SetHealth(currenthHealth);
+        currentHealth = MaxHealth;
     }
 
     public void TakeDamage(int damage)
     {
-            currenthHealth -= damage;
-            BosshealthBar.SetHealth(currenthHealth);
+        currentHealth -= damage;
 
-            if (currenthHealth <= 0)
-            {
-                Die();
-                return;
-            }
 
+        if (currentHealth <= 0)
+        {
+            StartCoroutine(Die());
+        }
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
-
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        animator.Play("Dead");
+        yield return new WaitForSeconds(2.30f);
+        Destroy(gameObject);
     }
 }
