@@ -25,6 +25,10 @@ PrefabInstance:
       value: Goblin
       objectReference: {fileID: 0}
     - target: {fileID: 2052260358074508724, guid: eda113653bb40744684a9443c6258b2e, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 940326036260544016}
+    - target: {fileID: 2052260358074508724, guid: eda113653bb40744684a9443c6258b2e, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 940326036260544017}
@@ -96,6 +100,11 @@ PrefabInstance:
     - {fileID: 7761323031696209133, guid: eda113653bb40744684a9443c6258b2e, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eda113653bb40744684a9443c6258b2e, type: 3}
+--- !u!50 &940326036260544016 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2052260358074508721, guid: eda113653bb40744684a9443c6258b2e, type: 3}
+  m_PrefabInstance: {fileID: 1258653155583458209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &940326036260544017 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2052260358074508720, guid: eda113653bb40744684a9443c6258b2e, type: 3}

@@ -27,7 +27,6 @@ public class BasicEnemy : MonoBehaviour
 
     public IEnumerator Die()
     {
-        //GetComponent<Enemy_behaviour>().moveSpeed = 0; 
         GetComponent<Enemy_behaviour>().enabled = false;
         GetComponent<Rigidbody2D>().isKinematic = true;
         animator.Play("Dead");

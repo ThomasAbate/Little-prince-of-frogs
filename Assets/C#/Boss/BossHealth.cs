@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public int MaxHealth = 10;
+    public int MaxHealth = 150;
     int currentHealth;
     public BossHealthBar bossHealthbar;
     public Animator animator;
@@ -22,9 +22,11 @@ public class BossHealth : MonoBehaviour
         bossHealthbar.SetMaxHealth(MaxHealth);
     }
 
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        bossHealthbar.SetHealth(currentHealth);
 
 
         if (currentHealth <= 0)

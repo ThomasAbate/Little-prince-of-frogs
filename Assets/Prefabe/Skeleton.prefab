@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 20
   animator: {fileID: 2052260358074508720}
+  rb: {fileID: 2052260358074508721}
 --- !u!114 &605075667153360344
 MonoBehaviour:
   m_ObjectHideFlags: 0

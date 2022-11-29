@@ -40,10 +40,20 @@ public class PlayerAttack : MonoBehaviour
 
             foreach (Collider2D enemy in hitEnemies)
             {
-                enemy.GetComponent<BasicEnemy>().TakeDamage(Damage);
-                Debug.Log("SHEEEEE");
+                if(enemy.GetComponent<BasicEnemy>())
+                {
+                    enemy.GetComponent<BasicEnemy>().TakeDamage(Damage);
+                    Debug.Log("SHEEEEE");
+                }
+                else if(enemy.GetComponent<BossHealth>())
+                {
+                    enemy.GetComponent<BossHealth>().TakeDamage(Damage);
+                    Debug.Log("OUIIIII");
+                }
+                
 
             }
+
 
         }
 
@@ -59,8 +69,16 @@ public class PlayerAttack : MonoBehaviour
 
             foreach (Collider2D enemy in hitEnemies)
             {
-                enemy.GetComponent<BasicEnemy>().TakeDamage(HugeDamage);
-                Debug.Log("SHEEEEE");
+                if(enemy.GetComponent<BasicEnemy>())
+                {
+                    enemy.GetComponent<BasicEnemy>().TakeDamage(Damage);
+                    Debug.Log("SHEEEEE");
+                }
+                else if(enemy.GetComponent<BossHealth>())
+                {
+                    enemy.GetComponent<BossHealth>().TakeDamage(Damage);
+                    Debug.Log("OUIIIII");
+                }
             }
 
         }
