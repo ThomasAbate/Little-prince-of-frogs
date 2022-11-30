@@ -12,8 +12,9 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayers;
 
     public int Damage = 10;
-    public int HugeDamage = 20; 
-
+    public int HugeDamage = 20;
+    int hitCount =0;
+    bool doubleAttack;
 
     private void Awake() 
     {
@@ -27,38 +28,67 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        Attack();
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Attack();
+        }
         HugeAttack();
     }
 
     void Attack()
     {
-        if (Input.GetButtonDown("Fire1") && !isAttacking)
+        if (!isAttacking)
         {
+            hitCount = 0;
             isAttacking = true;
+            Animation.Play("Attack_1");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(AttackPoint.position, attackRange, enemyLayers);
 
             foreach (Collider2D enemy in hitEnemies)
             {
-                if(enemy.GetComponent<BasicEnemy>())
+                if (enemy.GetComponent<BasicEnemy>())
                 {
                     enemy.GetComponent<BasicEnemy>().TakeDamage(Damage);
                     Debug.Log("SHEEEEE");
                 }
-                else if(enemy.GetComponent<BossHealth>())
+                else if (enemy.GetComponent<BossHealth>())
                 {
                     enemy.GetComponent<BossHealth>().TakeDamage(Damage);
                     Debug.Log("OUIIIII");
                 }
-                
+
 
             }
-
-
+            hitCount++;
         }
+        else if (hitCount == 1)
+        {
+            doubleAttack = true;
+            Animation.SetBool("DoubleAttack", true);
+            hitCount++;
+        } 
+        
 
     }
-    
+
+    public void EndAttack()
+    {
+        if (!doubleAttack)
+        {
+            hitCount = 0;
+            isAttacking = false;
+        }
+    }
+
+    public void EndDoubleAttack()
+    {
+        hitCount = 0;
+        isAttacking = false;
+        doubleAttack = false;
+        Animation.SetBool("DoubleAttack", false);
+
+    }
+
     void HugeAttack()
     {
         if (Input.GetButtonDown("Fire2"))

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
+using UnityEditor;
 using TMPro;
 
 public class Inventory : MonoBehaviour

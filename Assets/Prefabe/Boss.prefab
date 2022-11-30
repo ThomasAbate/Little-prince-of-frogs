@@ -160,10 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92fb0052af16734387b9bd281db1ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 150
+  MaxHealth: 300
   bossHealthbar: {fileID: 0}
   animator: {fileID: 6443134997997420921}
-  instance: {fileID: 0}
+  instance: {fileID: 5832374507088390961}
 --- !u!114 &6443134997997420911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898c5715f572bb4a9d114d966b2c5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  attackDamage: 30
   attackOffset: {x: -1.7, y: -1.25, z: 0}
   attackRange: 1
   attackMask:
