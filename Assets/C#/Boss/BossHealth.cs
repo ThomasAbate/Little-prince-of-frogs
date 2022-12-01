@@ -41,6 +41,7 @@ public class BossHealth : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().isKinematic = true;
         animator.Play("Dead");
+        yield return new WaitForSeconds(1.30f);
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1.30f);
         Destroy(gameObject);

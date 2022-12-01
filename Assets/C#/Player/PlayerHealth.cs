@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         if (instance != null)
         {
 
-            Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scène");
+            Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scï¿½ne");
             return;
         }
 
@@ -32,15 +32,6 @@ public class PlayerHealth : MonoBehaviour
     {
         currenthHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(60);
-        }
-
     }
 
     public void HealPlayer(int amount)
@@ -71,8 +62,6 @@ public class PlayerHealth : MonoBehaviour
                 return;
             }
 
-
-            animator.Play("Hit");
             isInvicible = true;
             StartCoroutine(InvicibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
