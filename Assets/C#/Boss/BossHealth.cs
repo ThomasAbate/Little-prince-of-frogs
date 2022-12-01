@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossHealth : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class BossHealth : MonoBehaviour
     public BossHealthBar bossHealthbar;
     public Animator animator;
     public BossHealth instance;
+    public Animator fadeSystem;
 
     private void Awake()
     {
-        
+        fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
         instance = this;
     }
 
@@ -39,7 +41,12 @@ public class BossHealth : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().isKinematic = true;
         animator.Play("Dead");
-        yield return new WaitForSeconds(2.30f);
+        fadeSystem.SetTrigger("FadeIn");
+        yield return new WaitForSeconds(1.30f);
         Destroy(gameObject);
+        DontDestroyOnLoadScene.instance.RemoveFromDontDestoryOnLoad();
+        SceneManager.LoadScene("The End");
+        
+        
     }
 }

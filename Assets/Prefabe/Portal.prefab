@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2633900830879615534}
   - component: {fileID: 2633900830879615521}
   - component: {fileID: 2633900830879615532}
+  - component: {fileID: 7095265649707218463}
   - component: {fileID: -9210578053372026016}
-  - component: {fileID: 1158471845409021914}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2633900830879615521
 SpriteRenderer:
@@ -107,6 +107,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7095265649707218463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633900830879615520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3954ce817c88942b74bbedca90cf25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portal: {fileID: 0}
 --- !u!61 &-9210578053372026016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133,16 +146,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.45, y: 3.2}
   m_EdgeRadius: 0
---- !u!114 &1158471845409021914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2633900830879615520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea3954ce817c88942b74bbedca90cf25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portal: {fileID: 7549393436734882043, guid: f174efafaf03982429d23e693bffb007, type: 3}
